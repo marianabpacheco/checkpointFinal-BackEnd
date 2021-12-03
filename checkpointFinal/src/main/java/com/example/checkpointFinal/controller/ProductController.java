@@ -1,5 +1,6 @@
 package com.example.checkpointFinal.controller;
 
+import com.example.checkpointFinal.config.TestConfig;
 import com.example.checkpointFinal.entities.Product;
 import com.example.checkpointFinal.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class ProductController {
     public ResponseEntity<Product> findById(@PathVariable Long id) {
         Product obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @GetMapping(value = "/categories/name/{category}")
+    public ResponseEntity<List<Product>> findbyCategory(@PathVariable String category){
+        List<Product> list = service.findByCategory(category);
+        return ResponseEntity.ok().body(list);
     }
 
 }

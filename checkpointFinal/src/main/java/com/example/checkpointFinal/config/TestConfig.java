@@ -22,11 +22,13 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private CategoryRepository categoryRepository;
 
+//    public static Integer totalCategories = 0;
+
     @Override
     public void run(String... args) throws Exception {
-        Category cat1 = new Category(null, "notebooks");
-        Category cat2 = new Category(null, "computadores");
-        Category cat3 = new Category(null, "celulares");
+        Category cat1 = instanciaDeCategory( "notebooks");
+        Category cat2 = instanciaDeCategory( "computadores");
+        Category cat3 = instanciaDeCategory( "celulares");
         categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 
         Product p1 = new Product(null, "notebook gamer",  3000.00, "Notebook padrão intel", "notebook.png", cat1);
@@ -35,4 +37,10 @@ public class TestConfig implements CommandLineRunner {
         productRepository.saveAll(Arrays.asList(p1, p2, p3));
 
     }
+
+    public Category instanciaDeCategory(String name) {
+//        totalCategories += 1;
+        return new Category(null, name);
+    }
+
 }

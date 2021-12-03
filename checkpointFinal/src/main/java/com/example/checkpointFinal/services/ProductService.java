@@ -1,6 +1,5 @@
 package com.example.checkpointFinal.services;
 
-import com.example.checkpointFinal.entities.Category;
 import com.example.checkpointFinal.entities.Product;
 import com.example.checkpointFinal.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +10,17 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    private ProductRepository productRepository;
 
     @Autowired
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    private ProductRepository repository;
+
+    public List<Product> findAll() {
+        return repository.findAll();
     }
 
-    public List<Product> buscarTodos(){
-        return productRepository.findAll();
+    public Product findById(Long id) {
+        Optional<Product> obj = repository.findById(id);
+        return obj.get();
     }
 
-    public Optional<Product> buscarPorId(Integer id){
-        return productRepository.findById(id);
-    }
 }

@@ -12,21 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping(value = "/products")
 public class ProductController {
 
     @Autowired
-    private ProductService productService;
+    private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<Product>> buscarTodos(){
-        return ResponseEntity.ok(productService.buscarTodos());
+    public ResponseEntity<List<Product>> findAll(){
+        List<Product> list = service.findAll();
+        return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Product> buscarPorId(@PathVariable Integer id) {
-        Product product = productService.buscarPorId(id).orElse(null);
-        return ResponseEntity.ok(product);
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Product> findById(@PathVariable Long id) {
+        Product obj = service.findById(id);
+        return ResponseEntity.ok().body(obj);
     }
 
 }

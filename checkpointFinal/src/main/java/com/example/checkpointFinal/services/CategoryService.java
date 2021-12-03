@@ -1,28 +1,28 @@
 package com.example.checkpointFinal.services;
 
 import com.example.checkpointFinal.entities.Category;
-import com.example.checkpointFinal.entities.Product;
 import com.example.checkpointFinal.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
 public class CategoryService {
 
-    private CategoryRepository categoryRepository;
-
     @Autowired
-    public CategoryService(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
+    private CategoryRepository repository;
+
+    public List<Category> findAll() {
+        return repository.findAll();
     }
 
-
-    public List<Category> buscarTodos(){
-        return categoryRepository.findAll();
+    public Category findById(Long id) {
+        Optional<Category> obj = repository.findById(id);
+        return obj.get();
     }
 
 

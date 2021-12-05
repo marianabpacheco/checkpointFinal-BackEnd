@@ -1,17 +1,15 @@
 package com.example.checkpointFinal.controller;
 
-import com.example.checkpointFinal.config.TestConfig;
+//import com.example.checkpointFinal.config.TestConfig;
 import com.example.checkpointFinal.entities.Product;
 import com.example.checkpointFinal.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "")
 @RestController
 @RequestMapping(value = "/products")
 public class ProductController {

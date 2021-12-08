@@ -1,4 +1,4 @@
-INSERT INTO tb_category (name) VALUES ('celulares'),('tvs'),('notebooks'),('informática');
+INSERT INTO tb_category (name) VALUES ('celulares'),('tvs'),('notebooks'),('informatica');
 
 INSERT INTO tb_product (title,price,description,image,category_id) VALUES ('Smartphone Samsung Galaxy S20 Fe',2294.99,'Smartphone Samsung Galaxy S20 Fe 128GB 4G Wi-Fi Tela 6.5″ Dual Chip 6GB RAM Câmera Tripla + Selfie 32MP - Cor: Cloud Mint','https://a-static.mlcdn.com.br/618x463/smartphone-samsung-galaxy-s20-fe-128gb-cloud-mint-4g-6gb-ram-tela-65-cam-tripla-selfie-32mp/magazineluiza/155630400/5f2870ff3ce9ab58274fe9df33ec846b.jpg',1),
 ('Smartphone Moto G60', 1869.10,'Smartphone Moto G60 128GB 4G Wi-Fi Tela 6.8″ Dual Chip 6GB RAM Câmera Tripla + Selfie 32MP - Cor: Azul','https://images-americanas.b2w.io/produtos/01/00/img/3177003/9/3177003910_1SZ.jpg',1),
